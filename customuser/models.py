@@ -3,8 +3,9 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class CustomModel(AbstractUser):
-
-    db_table = 'custom_user'
+    
+    class Meta: 
+       db_table = 'custom_user'
 
     address = models.TextField(max_length=500, blank=True)
     bio = models.TextField(max_length=500, blank=True)
